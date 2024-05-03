@@ -1,5 +1,28 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Encrypt & Decrypt env files
+
+Make sure to have HashiCorp Vault CLI installed, otherwise [install it here](https://developer.hashicorp.com/vault/tutorials/hcp-vault-secrets-get-started/hcp-vault-secrets-install-cli)
+
+Preparation
+
+```bash
+$ vlt config
+```
+
+Encryption example
+
+```bash
+$ openssl enc -aes-256-cbc -pbkdf2 -iter 1000000 -md sha512 -salt -pass pass:`vlt secrets get --plaintext messenger` -in env-files/.env.dev -out env-files/.env.dev.enc
+```
+
+Decryption example
+
+```bash
+$ openssl enc -d -aes-256-cbc -pbkdf2 -iter 1000000 -md sha512 -salt -pass pass:`vlt secrets get --plaintext messenger` -in env-files/.env.dev.enc -out env-files/.env.dev
+```
+
+
 ## Getting Started
 
 First, run the development server:

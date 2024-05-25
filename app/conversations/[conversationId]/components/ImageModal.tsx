@@ -17,7 +17,6 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, src }) => {
 
 	return (
 		<Modal isOpen={isOpen} onClose={onClose}>
-			{/* TODO: Should fix className to w-96 h-96 */}
 			<div className="w-80 h-80">
 				<Image alt="Image" className="object-cover" fill src={src} />
 			</div>

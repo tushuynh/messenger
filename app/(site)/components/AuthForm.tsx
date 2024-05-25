@@ -59,10 +59,7 @@ const AuthForm = () => {
 		}
 
 		if (variant === 'LOGIN') {
-			signIn('credentials', {
-				...data,
-				redirect: false,
-			})
+			signIn('credentials', { ...data })
 				.then((callback) => {
 					if (callback?.error) {
 						toast.error('Invalid credentials');

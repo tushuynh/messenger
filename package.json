@@ -11,7 +11,9 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"prebuild": "npx prisma generate"
+		"prebuild": "npx prisma generate",
+		"enc": "bash ./scripts/encrypt.sh",
+    "dec": "bash ./scripts/decrypt.sh"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.7.19",

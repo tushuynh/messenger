@@ -13,13 +13,13 @@ $ vlt config
 Encryption example
 
 ```bash
-$ openssl enc -aes-256-cbc -pbkdf2 -iter 1000000 -md sha512 -salt -pass pass:`vlt secrets get --plaintext messenger` -in env-files/.env.dev -out env-files/.env.dev.enc
+$ yarn enc messenger {ENV}
 ```
 
 Decryption example
 
 ```bash
-$ openssl enc -d -aes-256-cbc -pbkdf2 -iter 1000000 -md sha512 -salt -pass pass:`vlt secrets get --plaintext messenger` -in env-files/.env.dev.enc -out env-files/.env.dev
+$ yarn enc messenger {ENV}
 ```
 
 

@@ -69,6 +69,7 @@ const AuthForm = () => {
 						toast.success('Logged in!');
 					}
 				})
+				.catch(() => toast.error('Invalid credentials'))
 				.finally(() => setIsLoading(false));
 		}
 	};

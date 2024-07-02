@@ -59,17 +59,16 @@ const AuthForm = () => {
 		}
 
 		if (variant === 'LOGIN') {
-			signIn('credentials', { ...data })
+			signIn('credentials', { ...data, redirect: false })
 				.then((callback) => {
 					if (callback?.error) {
-						toast.error('Invalid credentials');
+						toast.error('Email or password incorrect!');
 					}
 
 					if (callback?.ok && !callback?.error) {
 						toast.success('Logged in!');
 					}
 				})
-				.catch(() => toast.error('Invalid credentials'))
 				.finally(() => setIsLoading(false));
 		}
 	};
